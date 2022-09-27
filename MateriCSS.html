@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>nandaadyatma - Belajar CSS</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        scroll-behavior: smooth;
+      }
+
+      
+      nav {
+        display: flex;
+        /* padding: 0.6% 5%; */
+        padding-left: 10pt;
+        padding-top: 0,6%;
+        padding-bottom: 0,6%;
+        justify-content: space-between;
+        align-items: center;
+        /* border: 1px solid rgb(204, 204, 204); */
+        box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+        font-family: 'Courier New', Courier, monospace;
+        position: fixed;
+        background-color: white;
+        width: 100%;
+        font-size: 10pt;
+
+        
+      }
+      .nav-links{
+        flex: 1;
+        text-align: right;
+        padding-right: 40pt;
+       
+      }
+      .nav-links ul li{
+        list-style: none;
+        display: inline-block;
+        padding: 8px 8px;
+        position: relative;
+      }
+
+      .nav-links ul li a{
+        color: rgb(54, 54, 54);
+        text-decoration: none;
+        font-size: 12pt;
+      }
+
+      .nav-links ul li a:hover{
+        color: black;
+        text-decoration: none;
+        font-size: 12pt;
+        font-weight: bold
+      }
+
+      .side-nav{
+        /* top: ; */
+        width: 20%;
+        padding: 5pt;
+        position: fixed;
+        overflow-x: hidden;
+        height: 100vh;
+        border: 4px solid rgb(62, 178, 255);
+        font-family: 'Courier New', Courier, monospace;
+        margin-left: -4px;
+      }
+
+      .side-nav {
+        padding: 0;
+        margin-top: -4px;
+      }
+      .side-nav a{
+        color: rgb(54, 54, 54);
+        text-decoration: none;
+        font-size: 20px;
+        display: block;
+        padding: 5pt;
+        font-size: 18px;
+      }
+
+      .side-nav a:hover{
+        color: rgb(54, 54, 54);
+        text-decoration: none;
+        font-size: 20px;
+        display: block;
+        padding: 5pt;
+        font-size: 18px;
+        background-color: rgb(233, 233, 233) ;
+      }
+
+      .container{
+        float: right;
+        width: 80%;
+        left: 20%;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        font-size: 14pt;
+        margin-top: 30pt;
+      }
+      
+      .content{
+        margin: 20pt;
+      }
+
+      .hero img {
+        position: center;
+        align-items: center;
+        width: max-content;
+        border-radius: 10pt;
+      }
+
+      .center {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 50%;
+      }
+
+      .PenulisTanggal {
+        font-weight: 400;
+        font-size: 12pt;
+        margin: 2pt;
+        color: rgb(82, 82, 82);
+      }
+
+      .PenulisTanggal a:link, a:visited {
+        text-decoration: none;
+        color: black;
+        font-weight: 500;
+      }
+
+      .DaftarIsi a:link, a:visited {
+        padding-left: 5%;
+        text-decoration: none;
+        columns: rgb(62, 178, 255);
+      }
+
+    </style>
+  </head>
+  <body>
+   
+
+    <div class="side-nav">
+      <ul>
+        <li style="background-color: rgb(233, 233, 233)"><a href="">&ensp;</a></li>
+        <li style="background-color: rgb(233, 233, 233)"><a href="">&ensp;</a></li>
+        <li style="background-color: rgb(233, 233, 233)"><a href="#DaftarIsi" style="font-weight: 600; padding-top: 1pt;"> Materi CSS Dasar</a></li>
+        <li><a href="#PerkenalanCSS">&emsp;Perkenalan CSS</a></li>
+        <li><a href="">&emsp;CSS Syntacs</a></li>
+        <li><a href="">&emsp;Selector CSS</a></li>
+        <li><a href="">&emsp;Metode CSS</a></li>
+        
+
+      </ul>
+    </div>
+    <nav>
+      
+      <a href="#"
+        >
+        <svg style="fill: rgb(36, 36, 36);" xmlns="http://www.w3.org/2000/svg" height="48" width="48"><path d="m20.6 39.4 1.7-12.05h-5.1q-.6 0-.75-.375-.15-.375.15-.875l9.15-17.5h1.7l-1.7 12h5.05q.55 0 .725.375.175.375-.075.925L22.3 39.4Z"/></svg>
+
+        </a>
+        <h2 class="nav">nandaadyatma</h2>
+        <div class="nav-links">
+          <ul>
+          <li><a href="">daftar_pustaka</a></li>
+          <li><a href="">tentang_penulis</a></li>
+          </ul>
+        </div>
+      </nav>
+
+      
+      <div class="container">
+        
+        <div class="content">
+
+        <h1>Belajar CSS dengan Kilat</h1>
+        <h3 class="PenulisTanggal">
+          Oleh  <a href="https://www.instagram.com/putunanda_aryaadyatma/">nandaadyatma</a> - 26 September 2022
+        </h3>
+          <br>
+        <div class="hero"><img src="https://badoystudio.com/wp-content/uploads/2022/04/apa-itu-css.png" alt="CSS" class="center"></div>
+        <br><br><br> 
+         <p>
+          Sudah pernah dengar apa itu CSS? Ingin mulai belajar CSS tetapi bingung harus memulai dari mana? Kamu bisa memulainya dengan membaca artikel ini. CSS adalah salah satu bahasa pemrograman yang dipakai untuk membangun laman HTML. 
+          Di artikel ini akan dibahas segala sesuatu tentang CSS. Tidak perlu khawatir, pembahasan dalam artikel ini dimulai dari hal-hal yang basic seperti mengenai pengertian dan peran CSS.
+         </p>
+        
+          <!-- DAFTAR ISI -->
+          <h2 id="DaftarIsi" >&ensp;</h2> <br>
+          <h3>Daftar Isi</h3>
+          <br>
+          <div class="DaftarIsi">
+            <ol>
+              <li>
+                <dt><a href="#PerkenalanCSS">Perkenalan CSS</a></dt>
+              </li>
+              <li>
+                <dt><a href="#SejarahHTML">Sejarah HTML</a></dt>
+              </li>
+              <li>
+                <dt><a href="#KegunaanHTML">Kegunaan HTML</a></dt>
+              </li>
+              <li>
+                <a href="#DasarHTML"><dt>Dasar HTML</dt></a>
+              </li>
+              <dd><a href="#KerangkaHTML">Kerangka HTML</a></dd>
+              <dd><a href="#HeadingHTML">Heading HTML</a></dd>
+              <dd><a href="#ParagrafHTML">Paragraf HTML</a></dd>
+              <dd><a href="#LinkHTML">Link HTML</a></dd>
+              <dd><a href="#ImageHTML">Image HTML</a></dd>
+           </ol>
+          </div>
+      
+        <br />
+
+         <!-- Perkenalan CSS -->
+        <h2 id="PerkenalanCSS" >&ensp;</h2> <br>
+        <h2>Perkenalan CSS</h2>
+        <br>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque recusandae harum tenetur amet sapiente magnam temporibus. Distinctio dolores, repellendus rerum vel facere nobis harum impedit. Sit ea sunt voluptate eligendi.
+          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sit magnam dolorem, maxime vel assumenda laborum illum! Dolorum natus, iste reiciendis ad, enim ex minus, repudiandae facilis expedita voluptate quasi vel?
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sint illum repellat eos sapiente sit esse, magni ex rerum at, fugit enim ad, error nesciunt dolorum quisquam incidunt aspernatur. Nobis, suscipit.
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum non veniam ut atque doloribus soluta quasi repellendus reprehenderit, id quo aspernatur vitae rem deserunt asperiores. Velit reiciendis vitae voluptate maxime.
+         </p>
+        <br><br>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque recusandae harum tenetur amet sapiente magnam temporibus. Distinctio dolores, repellendus rerum vel facere nobis harum impedit. Sit ea sunt voluptate eligendi.
+          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sit magnam dolorem, maxime vel assumenda laborum illum! Dolorum natus, iste reiciendis ad, enim ex minus, repudiandae facilis expedita voluptate quasi vel?
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sint illum repellat eos sapiente sit esse, magni ex rerum at, fugit enim ad, error nesciunt dolorum quisquam incidunt aspernatur. Nobis, suscipit.
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum non veniam ut atque doloribus soluta quasi repellendus reprehenderit, id quo aspernatur vitae rem deserunt asperiores. Velit reiciendis vitae voluptate maxime.
+         </p>
+        <br><br>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque recusandae harum tenetur amet sapiente magnam temporibus. Distinctio dolores, repellendus rerum vel facere nobis harum impedit. Sit ea sunt voluptate eligendi.
+          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sit magnam dolorem, maxime vel assumenda laborum illum! Dolorum natus, iste reiciendis ad, enim ex minus, repudiandae facilis expedita voluptate quasi vel?
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sint illum repellat eos sapiente sit esse, magni ex rerum at, fugit enim ad, error nesciunt dolorum quisquam incidunt aspernatur. Nobis, suscipit.
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum non veniam ut atque doloribus soluta quasi repellendus reprehenderit, id quo aspernatur vitae rem deserunt asperiores. Velit reiciendis vitae voluptate maxime.
+         </p>
+       
+        <br><br>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque recusandae harum tenetur amet sapiente magnam temporibus. Distinctio dolores, repellendus rerum vel facere nobis harum impedit. Sit ea sunt voluptate eligendi.
+          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sit magnam dolorem, maxime vel assumenda laborum illum! Dolorum natus, iste reiciendis ad, enim ex minus, repudiandae facilis expedita voluptate quasi vel?
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sint illum repellat eos sapiente sit esse, magni ex rerum at, fugit enim ad, error nesciunt dolorum quisquam incidunt aspernatur. Nobis, suscipit.
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum non veniam ut atque doloribus soluta quasi repellendus reprehenderit, id quo aspernatur vitae rem deserunt asperiores. Velit reiciendis vitae voluptate maxime.
+         </p>
+        <br><br>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit eveniet, in repellat eligendi incidunt sequi explicabo perferendis. Veritatis fuga hic ut perspiciatis! Atque, molestias aliquid. Culpa eveniet magni quisquam itaque.
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores aspernatur mollitia dicta fugiat reiciendis praesentium, temporibus possimus eaque in optio illum sint saepe veniam ipsa placeat voluptate dolorem laudantium voluptatibus!
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eveniet nesciunt inventore dolore ipsum, impedit blanditiis accusantium rem sed. Tempora laudantium voluptatibus assumenda. Hic quae nobis libero non praesentium aut nostrum.
+        <br><br>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit eveniet, in repellat eligendi incidunt sequi explicabo perferendis. Veritatis fuga hic ut perspiciatis! Atque, molestias aliquid. Culpa eveniet magni quisquam itaque.
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores aspernatur mollitia dicta fugiat reiciendis praesentium, temporibus possimus eaque in optio illum sint saepe veniam ipsa placeat voluptate dolorem laudantium voluptatibus!
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eveniet nesciunt inventore dolore ipsum, impedit blanditiis accusantium rem sed. Tempora laudantium voluptatibus assumenda. Hic quae nobis libero non praesentium aut nostrum.
+        </div>
+
+      </div>
+  </body>
+</html>
