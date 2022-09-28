@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>nandaadyatma - Belajar CSS</title>
+    <link rel="icon" href="http://www.yoursite.com/favicon.ico?v=2" />
     <style>
       * {
         margin: 0;
@@ -80,6 +81,7 @@
         display: block;
         padding: 5pt;
         font-size: 18px;
+        padding-left: 10pt;
       }
 
       .side-nav a:hover{
@@ -97,18 +99,36 @@
         width: 80%;
         left: 20%;
         font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        line-height: 2;
         font-size: 14pt;
         margin-top: 30pt;
       }
       
       .content{
-        margin: 20pt;
+        margin-top: 20pt;
+        margin-left: 60pt;
+        margin-right: 60pt;
       }
 
       .hero img {
         position: center;
         align-items: center;
-        width: max-content;
+        width: 100%;
+        border-radius: 10pt;
+      }
+
+      .ContentImages {
+        position: center;
+        align-items: center;
+        width: 100%;
+        border-radius: 10pt;
+      }
+
+      .ContentImagesSmaller {
+        position: center;
+        align-items: center;
+        width: 60%;
+        padding-left: 100pt;
         border-radius: 10pt;
       }
 
@@ -132,12 +152,108 @@
         font-weight: 500;
       }
 
-      .DaftarIsi a:link, a:visited {
-        padding-left: 5%;
+      .DaftarIsi2 a:link, a:visited {
         text-decoration: none;
-        columns: rgb(62, 178, 255);
+        color: rgb(0, 0, 0);
       }
 
+      .DaftarIsi2 ol {
+        padding-left: 20pt;
+      }
+
+      .Penulis {
+        
+        margin-top: 20pt;
+        display: flex;
+        flex-wrap: wrap;
+      }
+      .Penulis .name {
+        margin: auto;
+        margin-left: 20pt;
+      }
+
+      .Penulis p {
+        color: rgb(61, 61, 61);
+        font-size: 12pt;
+      }
+
+      .Penulis img {
+        width: 10%;
+      }
+
+      .DaftarPustaka ul {
+        margin-left: 20pt;
+      }
+
+      code {
+        font-family: Consolas, "courier new";
+        color: rgb(97, 20, 220);
+        background-color: #f1f1f1;
+        padding: 2px;
+        font-size: 105%;
+      }
+
+      table td, tr {
+        border: 2px solid rgb(141, 141, 141);
+        padding: 6pt;
+       
+      }
+ 
+      table th {
+        background-color: #dbdbdb;
+        border: 2px solid rgb(141, 141, 141);
+        padding: 6pt;
+
+      }
+
+      table {
+        border-collapse: collapse;
+        width: 100%;
+      }
+
+    .CodeEditor {
+      margin: 5pt;
+      background-color: rgb(37, 37, 37);
+      color: white;
+      font-family: 'Courier New', Courier, monospace;
+      border-radius: 10pt;
+      padding: 10pt;
+      line-height: 1.5;
+    }
+
+    .HasilEksekusi {
+      margin: 5pt;
+      border: 1px solid rgb(102, 102, 102);
+      padding: 10pt;
+      
+      
+    }
+
+      @media only screen and (max-width: 1200px) {
+          .side-nav {
+            display: none;
+          }
+
+          .content {
+            margin-left: -20pt;
+            padding-right: 40pt;
+          }
+
+          .Penulis {
+            margin-left: -20pt;
+          }
+          
+          .Penulis img {
+            width: 20%;
+            margin: 20pt;
+          }
+
+          .ContentImagesSmaller {
+          position: center;
+          align-items: center;
+          width: 100%;
+      }
+        }
     </style>
   </head>
   <body>
@@ -148,7 +264,13 @@
         <li style="background-color: rgb(233, 233, 233)"><a href="">&ensp;</a></li>
         <li style="background-color: rgb(233, 233, 233)"><a href="">&ensp;</a></li>
         <li style="background-color: rgb(233, 233, 233)"><a href="#DaftarIsi" style="font-weight: 600; padding-top: 1pt;"> Materi CSS Dasar</a></li>
-        <li><a href="#PerkenalanCSS">&emsp;Perkenalan CSS</a></li>
+        <li><a href="#ApaItuCSS">&emsp;Apa Itu CSS?</a></li>
+        <!-- <li><a href="#HubunganCSSdanHTML">&emsp;Hubungan CSS dan HTML</a></li> -->
+        <li><a href="#BagianCSS">&emsp;Bagian-bagian CSS</a></li>
+        <li><a href="#SelectorCSS">&emsp;&emsp;Selector</a></li>
+        <li><a href="#PropertyCSS">&emsp;&emsp;Property</a></li>
+        <li><a href="#ValueCSS">&emsp;&emsp;Value</a></li>
+        <li><a href="#CaraMenulisCSS">&emsp;Cara Menulis CSS</a></li>
         <li><a href="">&emsp;CSS Syntacs</a></li>
         <li><a href="">&emsp;Selector CSS</a></li>
         <li><a href="">&emsp;Metode CSS</a></li>
@@ -166,8 +288,8 @@
         <h2 class="nav">nandaadyatma</h2>
         <div class="nav-links">
           <ul>
-          <li><a href="">daftar_pustaka</a></li>
-          <li><a href="">tentang_penulis</a></li>
+          <li><a href="#DaftarPustaka">daftar_pustaka</a></li>
+          <li><a href="#TentangPenulis">tentang_penulis</a></li>
           </ul>
         </div>
       </nav>
@@ -178,87 +300,281 @@
         <div class="content">
 
         <h1>Belajar CSS dengan Kilat</h1>
-        <h3 class="PenulisTanggal">
+        <h3 class="PenulisTanggal" id="TentangPenulis">
           Oleh  <a href="https://www.instagram.com/putunanda_aryaadyatma/">nandaadyatma</a> - 26 September 2022
         </h3>
-          <br>
+
+        <!-- Penulis -->
+        <div   class="Penulis">
+         <br><br>
+         <img style="border-radius: 50%;" src="data:image/jpeg;base64,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" alt="nandaadyatma">
+         <div class="name"><h3>Putu Nanda Arya Adyatma</h3>
+         <p>2105551035 - Mahasiswa Teknologi Informasi Universitas Udayana</p></div>
+         </div>
+
+         <br><hr><br>
+
         <div class="hero"><img src="https://badoystudio.com/wp-content/uploads/2022/04/apa-itu-css.png" alt="CSS" class="center"></div>
-        <br><br><br> 
+        <br>
          <p>
-          Sudah pernah dengar apa itu CSS? Ingin mulai belajar CSS tetapi bingung harus memulai dari mana? Kamu bisa memulainya dengan membaca artikel ini. CSS adalah salah satu bahasa pemrograman yang dipakai untuk membangun laman HTML. 
+          Setelah kita belajar membuat struktur suatu halaman website menggunakan HTML, selanjutnya kita dapat melakukan penghiasan pada website tersebut seperti memberi warna, menambahkan fitur <i>navigation bar</i>, dan yang lainnya. Nah, untuk melakukan ini kita menggunakan bahasa lain yang dikenal dengan CSS.
           Di artikel ini akan dibahas segala sesuatu tentang CSS. Tidak perlu khawatir, pembahasan dalam artikel ini dimulai dari hal-hal yang basic seperti mengenai pengertian dan peran CSS.
+         </p>
+         <br>
+         <p>
+          Tak usah berlama-lama lagi, langsung saja kita belajar mengenai apa itu CSS :D
          </p>
         
           <!-- DAFTAR ISI -->
-          <h2 id="DaftarIsi" >&ensp;</h2> <br>
-          <h3>Daftar Isi</h3>
+          <h2 id="DaftarIsi" >&ensp;</h2>
+          <h2>Daftar Isi</h2>
           <br>
-          <div class="DaftarIsi">
+          <div class="DaftarIsi2">
             <ol>
               <li>
-                <dt><a href="#PerkenalanCSS">Perkenalan CSS</a></dt>
+                <dt><a href="#ApaItuCSS">Apa Itu CSS?</a></dt>
+              </li>
+              <!-- <li>
+                <dt><a href="#HubunganCSSdanHTML">Sejarah HTML</a></dt>
+              </li> -->
+              <li>
+                <dt><a href="#BagianCSS">Bagian-bagian CSS</a></dt>
               </li>
               <li>
-                <dt><a href="#SejarahHTML">Sejarah HTML</a></dt>
+                <dt><a href="#CaraMenulisCSS">Cara Menulis CSS</a></dt>
               </li>
               <li>
-                <dt><a href="#KegunaanHTML">Kegunaan HTML</a></dt>
+                <dt><a href="#DasarHTML">Dasar HTML</a></dt>
               </li>
-              <li>
-                <a href="#DasarHTML"><dt>Dasar HTML</dt></a>
-              </li>
-              <dd><a href="#KerangkaHTML">Kerangka HTML</a></dd>
-              <dd><a href="#HeadingHTML">Heading HTML</a></dd>
-              <dd><a href="#ParagrafHTML">Paragraf HTML</a></dd>
-              <dd><a href="#LinkHTML">Link HTML</a></dd>
-              <dd><a href="#ImageHTML">Image HTML</a></dd>
+              
            </ol>
           </div>
       
         <br />
 
          <!-- Perkenalan CSS -->
-        <h2 id="PerkenalanCSS" >&ensp;</h2> <br>
-        <h2>Perkenalan CSS</h2>
+        <h2 id="ApaItuCSS" >&ensp;</h2>
+        <h2>Apa Itu CSS?</h2>
         <br>
         <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque recusandae harum tenetur amet sapiente magnam temporibus. Distinctio dolores, repellendus rerum vel facere nobis harum impedit. Sit ea sunt voluptate eligendi.
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sit magnam dolorem, maxime vel assumenda laborum illum! Dolorum natus, iste reiciendis ad, enim ex minus, repudiandae facilis expedita voluptate quasi vel?
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sint illum repellat eos sapiente sit esse, magni ex rerum at, fugit enim ad, error nesciunt dolorum quisquam incidunt aspernatur. Nobis, suscipit.
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum non veniam ut atque doloribus soluta quasi repellendus reprehenderit, id quo aspernatur vitae rem deserunt asperiores. Velit reiciendis vitae voluptate maxime.
-         </p>
-        <br><br>
+          CSS (Cascade Style Sheet) adalah sebuah bahasa untuk mengatur tampilan web sehingga terlihat lebih menarik dan indah.
+        </p>
+         <br>
         <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque recusandae harum tenetur amet sapiente magnam temporibus. Distinctio dolores, repellendus rerum vel facere nobis harum impedit. Sit ea sunt voluptate eligendi.
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sit magnam dolorem, maxime vel assumenda laborum illum! Dolorum natus, iste reiciendis ad, enim ex minus, repudiandae facilis expedita voluptate quasi vel?
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sint illum repellat eos sapiente sit esse, magni ex rerum at, fugit enim ad, error nesciunt dolorum quisquam incidunt aspernatur. Nobis, suscipit.
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum non veniam ut atque doloribus soluta quasi repellendus reprehenderit, id quo aspernatur vitae rem deserunt asperiores. Velit reiciendis vitae voluptate maxime.
+          Dengan CSS, kita dapat mengatur layout (tata letak), warna, font, garis, background, animasi, dan lain-lain.
          </p>
-        <br><br>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque recusandae harum tenetur amet sapiente magnam temporibus. Distinctio dolores, repellendus rerum vel facere nobis harum impedit. Sit ea sunt voluptate eligendi.
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sit magnam dolorem, maxime vel assumenda laborum illum! Dolorum natus, iste reiciendis ad, enim ex minus, repudiandae facilis expedita voluptate quasi vel?
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sint illum repellat eos sapiente sit esse, magni ex rerum at, fugit enim ad, error nesciunt dolorum quisquam incidunt aspernatur. Nobis, suscipit.
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum non veniam ut atque doloribus soluta quasi repellendus reprehenderit, id quo aspernatur vitae rem deserunt asperiores. Velit reiciendis vitae voluptate maxime.
-         </p>
+
+         <img class="ContentImages" src="https://i0.wp.com/css-tricks.com/wp-content/uploads/2019/04/s_601945040BCA3610D759145A4442799C97B904D9A9F8326DD30FDF0CF48A96B7_1555362067943_stackoverflow-compare.jpg?ssl=1" alt="CSS vs Tanpa CSS">
        
         <br><br>
         <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque recusandae harum tenetur amet sapiente magnam temporibus. Distinctio dolores, repellendus rerum vel facere nobis harum impedit. Sit ea sunt voluptate eligendi.
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sit magnam dolorem, maxime vel assumenda laborum illum! Dolorum natus, iste reiciendis ad, enim ex minus, repudiandae facilis expedita voluptate quasi vel?
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sint illum repellat eos sapiente sit esse, magni ex rerum at, fugit enim ad, error nesciunt dolorum quisquam incidunt aspernatur. Nobis, suscipit.
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum non veniam ut atque doloribus soluta quasi repellendus reprehenderit, id quo aspernatur vitae rem deserunt asperiores. Velit reiciendis vitae voluptate maxime.
+          Nah, untuk lebih jelas kita bisa lihat pada gambar di atas, yang mana pada gambar kiri merupakan halaman website yang menggunakan CSS sedangkan yang kanan merupakan halaman website tanpa menggunakan css. Dari gambar tersebut kita suadah bisa melihat perbedaanya bukan. Yang mana pada halaman yang menggunakan CSS (gambar kiri) lebih memiliki tampilan yang menarik :D
+        </p>
+        <br><hr>
+        <!-- Hubungan CSS dan HTML
+        <h2 id="HubunganCSSdanHTML" >&ensp;</h2> <br>
+        <h2>Hubungan CSS dan HTML?</h2>
+        <p>Lalu, apa hubungannya HTML dengan CSS? Keduanya sangat berhubungan erat. CSS adalah kode-kode yang dipakai untuk mendesain sebuah    laman HTML.
+
+          Jika HTML diibaratkan sebagai seorang manusia, maka CSS adalah pakaian yang membuat penampilan menjadi semakin menarik.
+          
+          CSS akan membantu para web designer untuk mengubah tampilan teks (baik dari bentuk dan ukuran font maupun warnanya), menambahkan gambar, hingga mengubah latar belakang sebuah halaman HTML.
+          
+          Keberadaan CSS bisa terlihat dengan adanya atribut warna teks. Di sini CSS memberi perintah berupa teks berwarna biru melalui tag <span> dengan atribut class=”warna”. Jadi setiap tag <span> muncul, teks yang mengikutinya akan berwarna biru.
+          
+          Pun demikian saat kamu ingin mengganti warnanya. Tinggal mengganti CSS pada tag <style> dari “blue” ke warna lain, maka teks yang awalnya berwarna biru akan berubah warna.</p>
+        <br> -->
+        
+         <!-- Bagian CSS -->
+         <h2 id="BagianCSS" >&ensp;</h2>
+         <h2>Bagian-bagian CSS</h2>
+         <br>
+         <img class="ContentImages" src="https://en-support.files.wordpress.com/2011/09/css-selectors-lrg.png" alt="Bagian-bagian CSS">
+         <br><br>
+         <h3>Selector</h3>
+         <p>
+          Selector berfungsi untuk memilih element mana yang hendak kita beri style. Selector bisa dituliskan dengan nama tagnya, misal: <code>h1</code>, <code>b</code>, <code>div</code>, <code>p</code>, dll. Bisa juga dituliskan dengan nama <code>class</code>-nya. selector <code>class</code> diawali dengan tanda (.) 
          </p>
+         <br>
+
+         <table>
+          <tr>
+            <th>Nama</th>
+            <th>Tanda</th>
+            <th>Contoh</th>
+            <th>Penjelasan</th>
+          </tr>
+          <tr>
+            <td>
+             tag
+            </td>
+            <td>
+              nama-tag
+            </td>
+            <td>h1, h2, p, div, ul</td>
+            <td>Mengatur <i>styling</i> pada elemen seperti &lt;h1&gt;, &lt;h2&gt;, &lt;p&gt;, &lt;div&gt;, &gt;ul&lt;, dan lainnya </td>
+          </tr>
+          
+         </table>
+        
+         <br><br>
+
+         <h3>Property</h3>
+         <p>
+          Ada banyak sekali jenis <code>property</code> pada CSS. <code>property</code> ini berfungsi untuk mengatur sebuah elemen, apakah mau elemen mau diberi warna latar, warna teks, <i>shadow</i>, dan lain-lainnya.
+         </p>
+         <p>
+          Begitu banyak pilihan <code>property</code> css yang bisa kita gunakan. Tetapi kita tidak akan dibahas disini satu persatu karena ada banyak sekali. Beberapa contoh property yaitu:
+         </p>
+         <br>
+         <table>
+          <tr>
+            <th>Nama</th>
+            <th>Fungsi</th>
+          </tr>
+          <tr>
+            <td>
+             color
+            </td>
+            <td>
+              Untuk mengubah warna teks
+            </td>
+          </tr>
+          <tr>
+            <td>
+              background-color
+            </td>
+            <td>
+              Untuk mengubah warna latar belakang teks
+            </td>
+          </tr>
+          <tr>
+            <td>
+              font-size
+            </td>
+            <td>
+              Untuk mengubah ukuran teks
+            </td>
+          </tr>
+         </table>
+         <br><br>
+
+         <h3>Value</h3>
+         <p>
+            Value merupakan nilai yang dimasukkan ke dalam <code>property</code>. Value juga bisa beragam bentuknya. Bisa berbentuk angka, hexacode, teks string biasa. hingga opsi-opsi khusus yang terbatas
+         </p>
+
+         <br>
+
+         <table>
+          <tr>
+            <th>Jenis</th>
+            <th>Contoh</th>
+            <th>Keterangan</th>
+          </tr>
+          <tr>
+            <td>
+              Angka
+            </td>
+            <td>
+              20px, 2rem, 1em, 100%
+            </td>
+            <td>
+              Biasanya digunakan untuk mendefinisikan suatu ukuran.
+            </td>
+          </tr>
+          <tr>
+            <td>
+              Warna
+            </td>
+            <td>
+              black, #FFF, rgba(0,0,125,1)
+            </td>
+            <td>
+              Digunakan untuk mendefinisikan warna.
+            </td>
+          </tr>
+         </table>
+         <br>
+         <h3>Contoh penggunaan property</h3>
+         <p class="CodeEditor">
+          &ensp; h1 {  color: red; }
+          <br><br>
+          &ensp; p { <br>
+          &emsp;    font-family: 'Courier New', Courier, monospace; <br>
+          &emsp;    color: blue; <br>
+          &emsp;    text-align: justify; <br>
+          &ensp; }
+         </p>
+         <br>
+         <p>
+          Contoh di atas merupakan contoh penulisan selector, property, dan value. 
+         </p>
+         <p>Kode CSS di atas akan menghasilkan tampilan seperti di bawah ini</p>
+         <br>
+         <div class="HasilEksekusi">
+          <h1 style="line-height: 1,5; color: red; font-family: 'Times New Roman', Times, serif;">Ini h1</h1>
+          <p style="line-height: 1,5; font-family: 'Courier New', Courier, monospace; color: blue; text-align: justify;">Ini paragraf. Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam officiis dolorem alias molestiae sequi laborum maxime ut deleniti corrupti, libero culpa perferendis at maiores dicta pariatur itaque delectus dolore autem.</p>
+         </div>
+         
+
+         <!-- Cara Menulis CSS -->
+         <h2 id="CaraMenulisCSS" >&ensp;</h2> <br>
+         <h2>Cara Menulis CSS</h2>
+         <br>
+         <p>
+          Terdapat 3 cara yang dapat kita lakukan untuk menulis CSS pada HTML.
+         </p>
+         <p>1. Inline CSS</p>
+         <p>2. Internal CSS</p>
+         <p>3. External CSS</p>
+
+         <br>
+         
+         <h3>Inline CSS</h3>
+         <p>Pertama ada inline style sheet. Sederhananya, CSS model ini adalah CSS dengan perintah pemrograman yang letaknya ada pada elemen.</p>
+         <p>Jadi dengan cara ini kita menuliskan style yang kita inginkan di dalam tag elemen tersebut. Seperti contoh berikut</p>
+         <div class="CodeEditor">
+          &ensp; ... <br>
+          &ensp; &lt;h2 <span class="style" style="color: rgb(255, 223, 80);">style="color: yellow;"</span>&gt; Ini Judul dengan H2 &lt;/h2&gt; <br>
+          &ensp; &lt;p <span style="color: rgb(255, 223, 80);">style="color: yellow;"</span>&gt;Lorem, ipsum dolor sit amet consectetur. <br>
+          &emsp; Maiores reprehenderit impedit doloribus fugit magnam magni quo? <br>
+          &emsp; Quos dolores, quibusdam sed nostrum cumque autem adipisci quaerat <br>
+          &emsp; tempore inventore sapiente optio corrupti.&lt;/p&gt;
+         </div>
+         <br>
+         <h3>Internal CSS</h3>
+         <p>Kemudian ada internal CSS. Sama seperti inline CSS model ini sama-sama diletakkan di dalam file HTML, namun perbedaanya dari peletakannya.
+          Dengan cara ini kita meletakkan style di dalam tag <code><head></head></code>... <code></head></code>
+         </p>
+
+
+         <!-- Box Model -->
+         <br>
+         <h2 id="BoxModelCSS" >&ensp;</h2>
+         <h2>Box Model CSS</h2>
+         <br>
+         <img class="ContentImagesSmaller" src="https://www.simplilearn.com/ice9/free_resources_article_thumb/CSS-Box-Model.png" alt="Box Model">
+         <br>
+
+         <!-- Daftar Pustaka -->
+         <br><br>
+         <hr>
+         <br><br>
+         <div id="DaftarPustaka">
+         <h2>Daftar Pustaka</h2>
+         <br>
+          <ul>
+            <li><a href="https://www.dewaweb.com/blog/belajar-css-pengertian-peran-fungsi-dan-macamnya/">Apa itu CSS? Pengertian, Peran, Fungsi, dan Macamnya</a></li>
+            <li><a href="https://www.w3schools.com/html/default.asp">W3Schools - HTML Tutorial</a></li>
+          </ul>
+        </div>
+         
         <br><br>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit eveniet, in repellat eligendi incidunt sequi explicabo perferendis. Veritatis fuga hic ut perspiciatis! Atque, molestias aliquid. Culpa eveniet magni quisquam itaque.
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores aspernatur mollitia dicta fugiat reiciendis praesentium, temporibus possimus eaque in optio illum sint saepe veniam ipsa placeat voluptate dolorem laudantium voluptatibus!
-        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eveniet nesciunt inventore dolore ipsum, impedit blanditiis accusantium rem sed. Tempora laudantium voluptatibus assumenda. Hic quae nobis libero non praesentium aut nostrum.
-        <br><br>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit eveniet, in repellat eligendi incidunt sequi explicabo perferendis. Veritatis fuga hic ut perspiciatis! Atque, molestias aliquid. Culpa eveniet magni quisquam itaque.
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores aspernatur mollitia dicta fugiat reiciendis praesentium, temporibus possimus eaque in optio illum sint saepe veniam ipsa placeat voluptate dolorem laudantium voluptatibus!
-        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eveniet nesciunt inventore dolore ipsum, impedit blanditiis accusantium rem sed. Tempora laudantium voluptatibus assumenda. Hic quae nobis libero non praesentium aut nostrum.
+        
+
         </div>
 
-      </div>
+      
   </body>
 </html>
