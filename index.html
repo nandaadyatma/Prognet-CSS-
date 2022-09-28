@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>nandaadyatma - Belajar CSS</title>
+    <title>Belajar CSS Kilat</title>
     <link rel="icon" href="http://www.yoursite.com/favicon.ico?v=2" />
     <style>
       * {
@@ -157,8 +157,8 @@
         color: rgb(0, 0, 0);
       }
 
-      .DaftarIsi2 ol {
-        padding-left: 20pt;
+      .DaftarIsi2 ul {
+        padding-left: 40pt;
       }
 
       .Penulis {
@@ -182,7 +182,7 @@
       }
 
       .DaftarPustaka ul {
-        margin-left: 20pt;
+        padding-left: 20pt;
       }
 
       code {
@@ -218,7 +218,7 @@
       font-family: 'Courier New', Courier, monospace;
       border-radius: 10pt;
       padding: 10pt;
-      line-height: 1.5;
+      line-height: 2;
     }
 
     .HasilEksekusi {
@@ -227,6 +227,10 @@
       padding: 10pt;
       
       
+    }
+
+    span #yellow {
+      color: rgb(255, 230, 0);
     }
 
       @media only screen and (max-width: 1200px) {
@@ -249,9 +253,60 @@
           }
 
           .ContentImagesSmaller {
+          margin-left: -30%;
           position: center;
           align-items: center;
           width: 100%;
+      }
+        }
+
+        @media only screen and (max-width: 600px) {
+          .side-nav {
+            display: none;
+          }
+
+          .nav-links {
+            display: none;
+          }
+
+          nav {
+            padding-left: 10pt;
+            padding-top: 0,6%;
+            padding-bottom: 0,6%;
+            box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+            font-family: 'Courier New', Courier, monospace;
+            position: fixed;
+            background-color: white;
+            width: 100%;
+            font-size: 10pt;
+          }
+
+          nav .nav{
+            margin-right: 500pt;
+          }
+
+          .container {
+            margin-left: 0pt;
+          }
+          .content {
+            margin-left: 0pt;
+            padding-right: 5pt;
+          }
+
+          .Penulis {
+            margin-left: -20pt;
+          }
+          
+          .Penulis img {
+            width: 20%;
+            margin: 20pt;
+          }
+
+          .ContentImagesSmaller {
+          margin-left: -50%;
+          position: center;
+          align-items: center;
+          width: 110%;
       }
         }
     </style>
@@ -267,13 +322,14 @@
         <li><a href="#ApaItuCSS">&emsp;Apa Itu CSS?</a></li>
         <!-- <li><a href="#HubunganCSSdanHTML">&emsp;Hubungan CSS dan HTML</a></li> -->
         <li><a href="#BagianCSS">&emsp;Bagian-bagian CSS</a></li>
-        <li><a href="#SelectorCSS">&emsp;&emsp;Selector</a></li>
-        <li><a href="#PropertyCSS">&emsp;&emsp;Property</a></li>
-        <li><a href="#ValueCSS">&emsp;&emsp;Value</a></li>
+        <li><a href="#Selector">&emsp;&emsp;Selector</a></li>
+        <li><a href="#Property">&emsp;&emsp;Property</a></li>
+        <li><a href="#Value">&emsp;&emsp;Value</a></li>
         <li><a href="#CaraMenulisCSS">&emsp;Cara Menulis CSS</a></li>
-        <li><a href="">&emsp;CSS Syntacs</a></li>
-        <li><a href="">&emsp;Selector CSS</a></li>
-        <li><a href="">&emsp;Metode CSS</a></li>
+        <li><a href="#InlineCSS">&emsp;&emsp;Inline CSS</a></li>
+        <li><a href="#InternalCSS">&emsp;&emsp;Internal CSS</a></li>
+        <li><a href="#ExternalCSS">&emsp;&emsp;External CSS</a></li>
+        <li><a href="#BoxModelCSS">&emsp;Box Model CSS</a></li>
         
 
       </ul>
@@ -288,8 +344,8 @@
         <h2 class="nav">nandaadyatma</h2>
         <div class="nav-links">
           <ul>
-          <li><a href="#DaftarPustaka">daftar_pustaka</a></li>
-          <li><a href="#TentangPenulis">tentang_penulis</a></li>
+          <li><a class="nav-DaftarPustaka" href="#DaftarPustaka">daftar_pustaka</a></li>
+          <li><a class="nav-TentangPenulis"href="#TentangPenulis">tentang_penulis</a></li>
           </ul>
         </div>
       </nav>
@@ -301,7 +357,7 @@
 
         <h1>Belajar CSS dengan Kilat</h1>
         <h3 class="PenulisTanggal" id="TentangPenulis">
-          Oleh  <a href="https://www.instagram.com/putunanda_aryaadyatma/">nandaadyatma</a> - 26 September 2022
+          Oleh  <a href="https://www.instagram.com/putunanda_aryaadyatma/" target="_blank">nandaadyatma</a> - 26 September 2022
         </h3>
 
         <!-- Penulis -->
@@ -328,9 +384,8 @@
           <!-- DAFTAR ISI -->
           <h2 id="DaftarIsi" >&ensp;</h2>
           <h2>Daftar Isi</h2>
-          <br>
           <div class="DaftarIsi2">
-            <ol>
+            <ul>
               <li>
                 <dt><a href="#ApaItuCSS">Apa Itu CSS?</a></dt>
               </li>
@@ -340,14 +395,20 @@
               <li>
                 <dt><a href="#BagianCSS">Bagian-bagian CSS</a></dt>
               </li>
+                <dd><a href="#Selector">Selector</a></dd>
+                <dd><a href="#Property">Property</a></dd>
+                <dd><a href="#Value">Value</a></dd>
               <li>
                 <dt><a href="#CaraMenulisCSS">Cara Menulis CSS</a></dt>
               </li>
+                <dd><a href="#InlineCSS">Inline CSS</a></dd>
+                <dd><a href="#InternalCSS">Internal CSS</a></dd>
+                <dd><a href="#ExternalCSS">External CSS</a></dd>
               <li>
-                <dt><a href="#DasarHTML">Dasar HTML</a></dt>
+                <dd><a href="#BoxModelCSS">Box Model CSS</a></dd>
               </li>
-              
-           </ol>
+
+           </ul>
           </div>
       
         <br />
@@ -368,22 +429,10 @@
        
         <br><br>
         <p>
-          Nah, untuk lebih jelas kita bisa lihat pada gambar di atas, yang mana pada gambar kiri merupakan halaman website yang menggunakan CSS sedangkan yang kanan merupakan halaman website tanpa menggunakan css. Dari gambar tersebut kita suadah bisa melihat perbedaanya bukan. Yang mana pada halaman yang menggunakan CSS (gambar kiri) lebih memiliki tampilan yang menarik :D
+          Nah, untuk lebih jelas kita bisa lihat pada gambar di atas, yang mana pada gambar kiri merupakan halaman website yang menggunakan CSS sedangkan yang kanan merupakan halaman website tanpa menggunakan css. Dari gambar tersebut kita sudah bisa melihat perbedaanya jelasnya, yang mana pada halaman yang menggunakan CSS (gambar kiri) lebih memiliki tampilan yang menarik :D
         </p>
         <br><hr>
-        <!-- Hubungan CSS dan HTML
-        <h2 id="HubunganCSSdanHTML" >&ensp;</h2> <br>
-        <h2>Hubungan CSS dan HTML?</h2>
-        <p>Lalu, apa hubungannya HTML dengan CSS? Keduanya sangat berhubungan erat. CSS adalah kode-kode yang dipakai untuk mendesain sebuah    laman HTML.
-
-          Jika HTML diibaratkan sebagai seorang manusia, maka CSS adalah pakaian yang membuat penampilan menjadi semakin menarik.
-          
-          CSS akan membantu para web designer untuk mengubah tampilan teks (baik dari bentuk dan ukuran font maupun warnanya), menambahkan gambar, hingga mengubah latar belakang sebuah halaman HTML.
-          
-          Keberadaan CSS bisa terlihat dengan adanya atribut warna teks. Di sini CSS memberi perintah berupa teks berwarna biru melalui tag <span> dengan atribut class=”warna”. Jadi setiap tag <span> muncul, teks yang mengikutinya akan berwarna biru.
-          
-          Pun demikian saat kamu ingin mengganti warnanya. Tinggal mengganti CSS pada tag <style> dari “blue” ke warna lain, maka teks yang awalnya berwarna biru akan berubah warna.</p>
-        <br> -->
+        
         
          <!-- Bagian CSS -->
          <h2 id="BagianCSS" >&ensp;</h2>
@@ -391,6 +440,7 @@
          <br>
          <img class="ContentImages" src="https://en-support.files.wordpress.com/2011/09/css-selectors-lrg.png" alt="Bagian-bagian CSS">
          <br><br>
+         <h2 id="Selector">&ensp;</h2>
          <h3>Selector</h3>
          <p>
           Selector berfungsi untuk memilih element mana yang hendak kita beri style. Selector bisa dituliskan dengan nama tagnya, misal: <code>h1</code>, <code>b</code>, <code>div</code>, <code>p</code>, dll. Bisa juga dituliskan dengan nama <code>class</code>-nya. selector <code>class</code> diawali dengan tanda (.) 
@@ -418,7 +468,7 @@
          </table>
         
          <br><br>
-
+         <h2 id="Property">&ensp;</h2>
          <h3>Property</h3>
          <p>
           Ada banyak sekali jenis <code>property</code> pada CSS. <code>property</code> ini berfungsi untuk mengatur sebuah elemen, apakah mau elemen mau diberi warna latar, warna teks, <i>shadow</i>, dan lain-lainnya.
@@ -458,7 +508,8 @@
           </tr>
          </table>
          <br><br>
-
+         
+         <h2 id="Value">&ensp;</h2>
          <h3>Value</h3>
          <p>
             Value merupakan nilai yang dimasukkan ke dalam <code>property</code>. Value juga bisa beragam bentuknya. Bisa berbentuk angka, hexacode, teks string biasa. hingga opsi-opsi khusus yang terbatas
@@ -529,8 +580,9 @@
          <p>2. Internal CSS</p>
          <p>3. External CSS</p>
 
-         <br>
          
+         <!-- Inline -->
+         <h2 id="InlineCSS" >&ensp;</h2> <br>
          <h3>Inline CSS</h3>
          <p>Pertama ada inline style sheet. Sederhananya, CSS model ini adalah CSS dengan perintah pemrograman yang letaknya ada pada elemen.</p>
          <p>Jadi dengan cara ini kita menuliskan style yang kita inginkan di dalam tag elemen tersebut. Seperti contoh berikut</p>
@@ -540,13 +592,70 @@
           &ensp; &lt;p <span style="color: rgb(255, 223, 80);">style="color: yellow;"</span>&gt;Lorem, ipsum dolor sit amet consectetur. <br>
           &emsp; Maiores reprehenderit impedit doloribus fugit magnam magni quo? <br>
           &emsp; Quos dolores, quibusdam sed nostrum cumque autem adipisci quaerat <br>
-          &emsp; tempore inventore sapiente optio corrupti.&lt;/p&gt;
+          &emsp; tempore inventore sapiente optio corrupti.&lt;/p&gt; <br>
+          &ensp; ... <br>
          </div>
          <br>
+
+         <!-- Internal -->
+         <h2 id="InternalCSS" >&ensp;</h2> <br>
+
          <h3>Internal CSS</h3>
          <p>Kemudian ada internal CSS. Sama seperti inline CSS model ini sama-sama diletakkan di dalam file HTML, namun perbedaanya dari peletakannya.
-          Dengan cara ini kita meletakkan style di dalam tag <code><head></head></code>... <code></head></code>
+          Dengan cara ini kita bisa meletakkan style di dalam tag <code>&lt;head&gt;</code>... <code>&lt;/head&gt;</code>. Style internal CSS ini ditulis di dalam tag <code>&lt;style&gt;</code>... <code>&lt;/style&gt;</code>
          </p>
+        <p>Nah, untuk lebih jelasnya bisa lihat contoh penulisan di bawah</p> <br>
+         <div class="CodeEditor">
+          &ensp; &lt;!DOCTYPE html&gt; <br>
+          &ensp; &lt;html&gt; <br>
+          &ensp; &lt;head&gt; <br>
+          &ensp;&ensp; &lt;title&gt;Contoh Internal CSS &lt;/title&gt; <br>
+          
+          <span style="color: rgb(255, 223, 80);">
+            &ensp;&ensp; &ensp;  &lt;style&gt; <br>
+            &ensp;&ensp; &ensp; p { <br>
+              &ensp;&ensp; &ensp;&ensp; font-family: serif; <br>
+              &ensp;&ensp; &ensp;&ensp; line-height: 1.75em; <br>
+              &ensp;&ensp; &ensp;&ensp;} <br>
+              &ensp;&ensp; &ensp; i { <br>
+                &ensp;&ensp; &ensp;&ensp; font-family: sans; <br>
+                &ensp;&ensp; &ensp;&ensp;} <br>
+                &ensp;&ensp; &ensp; 
+                &ensp;&ensp; &ensp;  &lt;/style&gt; <br>
+        </span>
+          &ensp;  &lt;body&gt; <br>
+          &ensp; ... <br>
+         </div>
+         <br>
+        
+         <!-- External -->
+         <h2 id="ExternalCSS" >&ensp;</h2> <br>
+
+         <h3>External CSS</h3>
+         <p>Nah cara yang terakhir yaitu, dengan cara external CSS. External CSS ini adalah kode CSS yang ditulis terpisah dengan kode HTML. Eksternal CSS ditulis di dalam file yang berbeda, yang mana file ini berekstensi .css.  </p>
+         <p>Contoh kita membuat file 'inicss.css' yang di dalam berisi kode CSS seperti berikut. </p><br>
+
+         <div class="CodeEditor">
+          
+            &ensp;&ensp;&ensp; <span style="color: rgb(255, 223, 80);">p {</span> <br>
+              &ensp;&ensp; &ensp;&ensp;  <span style="color: rgb(121, 174, 255);">font-family: </span>serif;<br>
+              &ensp;&ensp; &ensp;&ensp; <span style="color: rgb(121, 174, 255);">line-height: </span>1.75em;<br> <br>
+              &ensp;&ensp; &ensp;&ensp;<span style="color: rgb(255, 223, 80);" >} </span><br><br>
+              &ensp;&ensp;&ensp; <span style="color: rgb(255, 223, 80);"> i {</span> <br>
+                &ensp;&ensp;&ensp;&ensp; <span style="color: rgb(121, 174, 255);">font-family: </span>sans;<br>
+                &ensp;&ensp;&ensp;&ensp;<span style="color: rgb(255, 223, 80);" >}</span> <br><br>
+                  &ensp;&ensp;&ensp; <span style="color: rgb(255, 223, 80);">h1 {</span> <br>
+                  &ensp;&ensp;&ensp;&ensp; <span style="color: rgb(121, 174, 255);">font-family: </span>sans;<br>
+                  &ensp;&ensp;&ensp;&ensp; <span style="color: rgb(121, 174, 255);">color: </span>orange;<br>
+                  &ensp;&ensp;&ensp;&ensp;<span style="color: rgb(255, 223, 80);" >}</span> <br><br> <br>
+                
+         </div><br>
+         <p>Untuk menggunakan CSS ini, kita harus menghubungkannya dengan File HTML.</p>
+         <p>Ada dua cara yang bisa kita lakukan:</p>
+         <ol style="margin-left: 20pt;">
+          <li>Menggunakan tag `&lt;link&gt;`</li>
+          <li>Menggunakan `@import`</li>
+        </ol>
 
 
          <!-- Box Model -->
@@ -556,18 +665,49 @@
          <br>
          <img class="ContentImagesSmaller" src="https://www.simplilearn.com/ice9/free_resources_article_thumb/CSS-Box-Model.png" alt="Box Model">
          <br>
-
-         <!-- Daftar Pustaka -->
+        <p>Pada CSS, ada yang istilah yang namanya "Box Model". Box model ini digunakan ketika berbicara tenntang tata letak dan desain</p>
+        <br>
+        <p>Box model pada CSS pada dasarnya merupakan sebuah kotak yang membungkus tiap elemen pada HTML. Pada box model, kita akan mengenal beberapa bagian yaitu <strong>margin</strong>, <strong>border</strong>, <strong>padding</strong>, dan <strong>content</strong></p>
+        <br>
+        <ul style="margin-left: 20pt;">
+          <li><b>Content</b> - Isi kotak, tempat teks dan gambar muncul</li>
+          <li><b>Padding</b> - Jarak transparan diantara content dan border</li>
+          <li><b>Border</b> - Batas yang mengelilingi padding dan content </li>
+          <li><b>Margin</b> - Jarak trasnparan di luar border</li>
+        </ul>
+        <br>
+        <p>Contoh penggunaanya seperti di bawah ini</p>
+        <br>
+        <div class="CodeEditor">
+          
+            &ensp;&ensp;&ensp; <span style="color: rgb(255, 223, 80);"> div {</span> <br>
+              &ensp;&ensp;&ensp;&ensp; <span style="color: rgb(121, 174, 255);">width: </span>400px;<br>
+              &ensp;&ensp;&ensp;&ensp; <span style="color: rgb(121, 174, 255);">border </span>2px solid blue;<br> 
+              &ensp;&ensp;&ensp;&ensp; <span style="color: rgb(121, 174, 255);">padding </span>20pt;<br> 
+              &ensp;&ensp;&ensp;&ensp; <span style="color: rgb(121, 174, 255);">margin </span>30pt;<br>
+              &ensp;&ensp;&ensp;&ensp;<span style="color: rgb(255, 223, 80);" >}</span> <br><br>
+              
+       </div><br>
+        <br>
+        <p>Oke teman-teman semuanya, jadi itu tadi materi kilat mengenai CSS. Sebenarnya masih banyak lagi materi yang teman-teman bisa pelajari pada CSS.
+          Nah untuk sumber lebih lengkap teman-teman bisa baca pada bagian daftar pustaka yaa :D
+        </p>
+        <br>
+        <p>Terima kasih telah membaca 🙏😁</p>
+        <!-- Daftar Pustaka -->
          <br><br>
          <hr>
          <br><br>
          <div id="DaftarPustaka">
          <h2>Daftar Pustaka</h2>
-         <br>
-          <ul>
-            <li><a href="https://www.dewaweb.com/blog/belajar-css-pengertian-peran-fungsi-dan-macamnya/">Apa itu CSS? Pengertian, Peran, Fungsi, dan Macamnya</a></li>
-            <li><a href="https://www.w3schools.com/html/default.asp">W3Schools - HTML Tutorial</a></li>
+      
+          <ul style="padding-left: 20pt;">
+            <li><a href="https://www.w3schools.com/css/default.asp" target="_blank">W3Schools - CSS Tutorial</a></li>
+            <li><a href="https://www.dewaweb.com/blog/belajar-css-pengertian-peran-fungsi-dan-macamnya/" target="_blank">Apa itu CSS? Pengertian, Peran, Fungsi, dan Macamnya</a></li>
+            <li><a href="https://www.petanikode.com/css-dalam-html/" target="_blank">petanikode.com - Tutorial CSS #02: Cara Menulis CSS di HTML</a></li>
           </ul>
+          <br><br>
+          <h5 style="font-weight: 200;"><i>kalo teman-teman baca semua sumber diatas, sudah dipastikan teman-teman menjadi jago CSS :v</i></h5>
         </div>
          
         <br><br>
